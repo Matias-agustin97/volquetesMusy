@@ -3,7 +3,8 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import PrecioVolquetes from "../images/precioVolquetes.jpeg";
 import PrecioVolquetes2 from "../images/precioVolquetes2.jpeg";
 import PrecioVolquetes4 from "../images/camion4.jpeg";
-import '@splidejs/react-splide/css';
+import '@splidejs/react-splide/dist/css/splide.min.css';
+
 const Galeria = () => {
   return (
     <div className='galeria-cont'>

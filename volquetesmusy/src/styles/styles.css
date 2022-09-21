@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 
-
+html{
+    scroll-behavior: smooth;
+}
 .header-container{
     background-color: rgba(251,253,252,254);
     display: flex;
@@ -13,6 +15,9 @@
     justify-content: space-around;
     align-items: center;
     padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 .socialIcon{
@@ -21,6 +26,7 @@
     color: #333;
     transition: color ease-in-out 0.3s;
     margin: auto 0.5rem;
+    cursor: pointer;
 }
 
 .navBar{
@@ -43,32 +49,38 @@
     letter-spacing: 0.09rem;
     color: #333;
     text-decoration: none;
-    transition: color ease-in 0.4s;
+    transition: all ease-in 0.4s;
 }
 
 
 .navBar a:hover,.socialIcon:hover{
     color: rgb(159, 3, 3);
+    font-weight: 800;
 }
 
 .sobreNosotros-cont{
+    width: 100%;
     background-color: rgb(159, 3, 3);
-    min-height: 80vh;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+
 }
 
 .sobreNosotros{
+    width: 70%;
     color: #ddd;
-    padding: 3rem 1rem;
-    margin: 0rem 10%;
+    padding: 0rem 1rem;
     display: flex;
-
+    align-items: flex-start;
 }
 
 .sobreNosotros-info{
     font-family: "Poppins",sans-serif;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 0 2rem;
     line-height: 2.4rem;
     font-size: 1.8rem;
 }
@@ -92,14 +104,14 @@ h1{
 }
 .servicios-cont{
     margin: 0 auto;
-    width: 80%;
+    width: 66%;
     min-height: 80vh;
     color: #ddd;
     display: grid;
-    gap: 20% 15%;
-    grid-template-columns: 30% 30%;
-    grid-template-rows: 30% 30%;
-    justify-content: space-around;
+    gap: 10% 5%;
+    grid-template-columns: 35% 35%;
+    grid-template-rows: 35% 35%;
+    justify-content: space-between;
     align-content:center;
 }
 h3{
@@ -110,7 +122,6 @@ h3{
     text-align: center;
     border-radius: 2px solid #222;
     padding: 2rem;
-    min-height: 15rem;
     color: #000;
     background-color: #fff;
     border: #111;
@@ -142,8 +153,14 @@ h3{
 }
 .galeria-cont{
     margin: 0 auto;
-    width: 50%;
+    width: 66%;
     padding-bottom: 4rem;
+}
+.galeria-cont h2{
+    text-align: center;
+    color: rgb(159, 3, 3);
+    font-size: 2.4rem;
+    padding: 2rem 0;
 }
 
 .mapita{
@@ -182,5 +199,140 @@ h3{
 
 .formulario textarea{
     resize: none;
+    border: 2px rgba(100,100,100,0.5) solid;
+    border-radius: 0.25rem;
     
+}
+.formulario button{
+    margin: auto 0;
+    border: none;
+    background-color: rgb(159, 3, 3);
+    color: #fff;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-family:"Poppins",Helvetica, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    transition: background-color ease 0.4s;
+}
+
+.formulario button:hover{
+    background-color: rgb(102, 5, 5);
+}
+
+
+.whatsapp-icon-cont{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whatsapp-icon-cont img{
+    cursor: pointer;
+    width: 5rem;
+}
+.whatsapp-icon{
+    cursor: pointer;
+    font-size: 4rem;
+    color: green;
+    background-color: #fff;
+    
+}
+
+.floating-cont{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0rem;
+    width: 100%;
+    padding: 3rem 5rem ;
+}
+
+
+.upArrowCont svg{
+    font-size: 5rem;
+    cursor: pointer;
+   
+}
+
+@media (max-width:600px) {
+    .header-container{
+        font-size: 0.75rem;
+        padding: 1rem 0.5rem;
+        
+    }
+    .header-container svg{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .header-container ul{
+        text-align: justify;
+        padding: 0;
+    }
+    .sobreNosotros-cont{
+        width: 100%;
+        min-height: 120vh;
+    }
+    .sobreNosotros{
+        padding: 1rem 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+    }
+    .sobreNosotros-info{
+        font-size: 1rem;
+    }
+    .sobreNosotros-info h1 p {
+        font-size: 1rem;
+        padding: 2rem 0;
+    }
+    .info{
+        font-size: 1rem;
+        text-align: start;
+    }
+    .servicios-cont{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       width: 100%;
+    }
+    .servicios-item{
+        width: 90%;
+        margin: 2rem auto;
+    }
+    .galeria-cont{
+        width: 100%;
+    }
+    .galeria-cont div {
+        width: 90%;
+        margin: 0 auto;        
+    }
+    .contacto-cont{
+        flex-direction: column;
+        width: 90%;
+    }
+    .contacto-cont iframe{
+        width: 100%;
+    }
+    
+    .floating-cont{
+        padding: 2rem;
+    }
+    .floating-cont svg{
+        font-size: 3.5rem;
+        color: #333;
+    }
+    .whatsapp-icon-cont img {
+        width: 3.5em;
+    }
+    .whatsapp-icon-hover{
+        display: none;
+    }
+    .formulario button{
+        margin: 1rem 0;
+    }
 }
