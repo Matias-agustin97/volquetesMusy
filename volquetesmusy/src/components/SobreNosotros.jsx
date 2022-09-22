@@ -3,13 +3,13 @@ import logo from "../images/logo.jpeg"
 import logoMobile from "../images/responsive/logo_162x119.png"
 
 
-const SobreNosotros = () => {
+const SobreNosotros =React.forwardRef((props,ref) => {
   return (
-    <div className='sobreNosotros-cont'>
+    <div className='sobreNosotros-cont' ref={ref}>
         <div className="sobreNosotros">
         <picture>
     <source media="(max-width:465px)" srcset={logoMobile}/>
-    <img src={logo} height="auto"/>
+    <img src={logo} height="auto" alt='logo contenedores musy'/>
    </picture>
    <div className="sobreNosotros-info">
    <h1>Volquetes Musy </h1>
@@ -26,5 +26,6 @@ Atendida por sus dueños, nuestro principal objetivo es la atención personaliza
     </div>
   )
 }
+)
 
 export default SobreNosotros

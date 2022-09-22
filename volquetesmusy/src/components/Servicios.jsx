@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Servicios = () => {
+const Servicios = React.forwardRef((props,ref) => {
   return (
-    <section className='section-servicios' >
+    <section className='section-servicios' ref={ref} >
           <div className='servicios-header'>Servicios</div>
         <div className='servicios-cont'>
         <div className="servicios-item">
@@ -32,6 +32,6 @@ const Servicios = () => {
     </div>
     </section>
   )
-}
+})
 
 export default Servicios

@@ -2,10 +2,12 @@ import React from 'react'
 import UpArrowIcon from './UpArrowIcon'
 import WhatsappIcon from './WhatsappIcon'
 
-const FloatingButons = () => {
+const FloatingButons = ({scrolltoHome}) => {
   return (
     <div className='floating-cont'>
-        <UpArrowIcon/>
+        <span onClick={scrolltoHome}>
+        <UpArrowIcon />
+        </span>
         <WhatsappIcon/>
     </div>
   )

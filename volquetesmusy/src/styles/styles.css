@@ -42,9 +42,10 @@ html{
 
 .navBar li {
     padding: 0.3rem 0.8rem;
+    cursor: pointer;
 }
 
-.navBar a{
+.navBar li{
     font-weight: 600;
     letter-spacing: 0.09rem;
     color: #333;
@@ -53,7 +54,7 @@ html{
 }
 
 
-.navBar a:hover,.socialIcon:hover{
+.navBar li:hover,.socialIcon:hover{
     color: rgb(159, 3, 3);
     font-weight: 800;
 }
@@ -254,6 +255,17 @@ h3{
     font-size: 5rem;
     cursor: pointer;
    
+}
+
+
+
+.footer{
+    background-color: rgb(102, 5, 5);
+    color: #ddd;
+    font-size: 0.8rem;
+    padding: 1rem 0;
+    text-align: center;
+
 }
 
 @media (max-width:600px) {

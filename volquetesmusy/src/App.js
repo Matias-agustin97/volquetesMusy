@@ -5,17 +5,15 @@ import Galeria from "./components/Galeria";
 import "./styles/styles.css"
 import Contacto from "./components/Contacto";
 import React, { useRef } from "react";
-import {ImWhatsapp} from "react-icons/im"
-import WhatsappIcon from "./components/WhatsappIcon";
-import UpArrowIcon from "./components/UpArrowIcon";
 import FloatingButons from "./components/FloatingButons";
+import Footer from "./components/Footer";
 function App() {
 
   const homeRef= useRef(null)
   const nosotrosRef= useRef(null)
-  const serviciosRef=useRef(null) 
+  const serviciosRef=useRef(null)  
   const galeriaRef=useRef(null)
-  const contactoRef=useRef(null)
+  const contactoRef=React.createRef()
 
 
   const scrolltoHome=()=>homeRef.current.scrollIntoView()
@@ -25,13 +23,16 @@ function App() {
   const scrolltoContacto=()=> contactoRef.current.scrollIntoView()
 
   return (
-    <div className="App">
-     <Header scrolltoHome={scrolltoHome} scrolltoNosotros={scrolltoNosotros} scrolltoServicios={scrolltoServicios}/>
-    <SobreNosotros ref={nosotrosRef}/>
-    <Servicios/>
-    <Galeria/>
-    <Contacto/>
-    <FloatingButons/>
+    <div className="App" ref={homeRef}>
+     <Header scrolltoHome={scrolltoHome} scrolltoNosotros={scrolltoNosotros} scrolltoServicios={scrolltoServicios} scrolltoGaleria={scrolltoGaleria} scrolltoContacto={scrolltoContacto}/>
+     <SobreNosotros ref={nosotrosRef}/>
+   
+    <Servicios ref ={serviciosRef}/>
+    <Galeria ref={galeriaRef}/>
+    
+    <Contacto ref={contactoRef}/>
+    <FloatingButons scrolltoHome={scrolltoHome}/>
+    <Footer/>
     </div>
   );
 }
