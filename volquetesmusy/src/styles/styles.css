@@ -111,7 +111,7 @@ h1{
     display: grid;
     gap: 10% 5%;
     grid-template-columns: 35% 35%;
-    grid-template-rows: 35% 35%;
+    grid-template-rows: 45% 45%;
     justify-content: space-between;
     align-content:center;
 }
@@ -129,6 +129,26 @@ h3{
     box-shadow: #111 1px 3px 5px;
     transition: box-shadow ease-in 0.4s;
     word-wrap: break-word;
+    border-radius: 0.5rem;
+}
+
+.servicios-item button{
+    font-family: "Poppins",sans-serif;
+    padding: 0.25rem 1rem;
+    background-color: rgb(159, 3, 3);
+    color: #fff;
+    border: none;
+    transition: all ease-in-out 0.4s;
+    border-radius: 0.35rem;
+}
+
+.servicios-item button:hover{
+    background-color: rgb(102, 5, 5);
+}
+
+.servicios-item a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .servicios-item:hover{
