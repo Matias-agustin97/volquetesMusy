@@ -19,6 +19,7 @@ const SobreNosotros =React.forwardRef((props,ref) => {
    Somos Volquetes MUSY, una empresa con mas de 30 años de experiencia en el rubro dedicada al alquiler de volquetes (Habilitada por el Gobierno de la Ciudad de Buenos Aires).
 
 Atendida por sus dueños, nuestro principal objetivo es la atención personalizada y satisfacción de nuestros clientes, por eso contamos con todo lo adecuado para brindar el mejor servicio en C.A.B.A (Capital Federal).
+<div style={{fontWeight:"bolder", textAlign:"center",paddingTop:"1rem"}}>0112871-2555</div>
    </p>
    </div>
     
