@@ -7,6 +7,7 @@ import Contacto from "./components/Contacto";
 import React, { useRef } from "react";
 import FloatingButons from "./components/FloatingButons";
 import Footer from "./components/Footer";
+import { ThemeProvider, createTheme } from "@mui/material";
 function App() {
 
   const homeRef= useRef(null)
@@ -22,8 +23,29 @@ function App() {
   const scrolltoGaleria=()=>galeriaRef.current.scrollIntoView()
   const scrolltoContacto=()=> contactoRef.current.scrollIntoView()
 
+
+
+  const theme=createTheme({
+    pallete:{
+      primary:"red"
+    }
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
-    <div className="App" ref={homeRef}>
+   <ThemeProvider theme={theme}>
+     <div className="App" ref={homeRef}>
      <Header scrolltoHome={scrolltoHome} scrolltoNosotros={scrolltoNosotros} scrolltoServicios={scrolltoServicios} scrolltoGaleria={scrolltoGaleria} scrolltoContacto={scrolltoContacto}/>
      <SobreNosotros ref={nosotrosRef}/>
    
@@ -34,6 +56,7 @@ function App() {
     <FloatingButons scrolltoHome={scrolltoHome}/>
     <Footer/>
     </div>
+   </ThemeProvider>
   );
 }
 
