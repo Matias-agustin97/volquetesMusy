@@ -7,7 +7,20 @@ import Contacto from "./components/Contacto";
 import React, { useRef } from "react";
 import FloatingButons from "./components/FloatingButons";
 import Footer from "./components/Footer";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+
+
+import Righteous from "./styles/fonts/Righteous-Regular.ttf"
+
+
+
+
+
+
+
+
+
+
 function App() {
 
   const homeRef= useRef(null)
@@ -26,8 +39,28 @@ function App() {
 
 
   const theme=createTheme({
-    pallete:{
-      primary:"red"
+    palette:{
+      primary:{
+        main:"#b62e35"
+      },
+      secondary:{
+        main:"#323433"
+      }
+      ,
+      terciary:{
+        main:"#fcfbfc"
+      }
+    },
+    components:{
+      MuiCssBaseline:{
+        styleOverrides:`
+        @fontface{
+          font-family:"Righteous";
+          font-style:normal;
+          font-weight:400;
+          src:url(${Righteous}) format("ttf");
+        }`
+      }
     }
   })
 
@@ -40,22 +73,13 @@ function App() {
 
 
 
-
+console.log(theme);
 
 
   return (
    <ThemeProvider theme={theme}>
-     <div className="App" ref={homeRef}>
-     <Header scrolltoHome={scrolltoHome} scrolltoNosotros={scrolltoNosotros} scrolltoServicios={scrolltoServicios} scrolltoGaleria={scrolltoGaleria} scrolltoContacto={scrolltoContacto}/>
-     <SobreNosotros ref={nosotrosRef}/>
-   
-    <Servicios ref ={serviciosRef}/>
-    <Galeria ref={galeriaRef}/>
-    
-    <Contacto ref={contactoRef}/>
-    <FloatingButons scrolltoHome={scrolltoHome}/>
-    <Footer/>
-    </div>
+    <CssBaseline/>
+      <Header/>
    </ThemeProvider>
   );
 }

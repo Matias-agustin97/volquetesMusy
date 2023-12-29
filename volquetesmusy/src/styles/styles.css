@@ -5,8 +5,8 @@
 }
 :root{
     --color-primario:"#b62e35";
-    --color-secundario:"#323738";
-    --color-terciario:"#323738";
+    --color-secundario:"#323433";
+    --color-terciario:"#fcfbfc";
 }
 *{
     padding: 0;
