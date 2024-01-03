@@ -1,6 +1,6 @@
-import { AppBar, Box, Container, Link, Switch, Toolbar, useTheme } from '@mui/material';
+import { AppBar, Box, Container, Link, Menu, Switch, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react'
-
+import MenuIcon from '@mui/icons-material/Menu';
 
 import { FaFacebookSquare} from "react-icons/fa";
 import { FaInstagram } from 'react-icons/fa';
@@ -14,6 +14,11 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
 
   const dispatch=useDispatch()
   const browserTheme= useSelector((state)=>state.mode.value)
+
+
+  const media=useMediaQuery('(max-width:600px)')
+
+
 
   const navMenuLiStyle={
     color:"white",
@@ -30,13 +35,27 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
  <header className='header-container'>
   <AppBar>
     <Toolbar>
-      <Switch onClick={()=>{
+      <Switch color="secondary" onClick={()=>{
         dispatch(flipTheLights())
         
       }
         }></Switch>
       <Container>
-        <Box sx={{display:"flex",justifyContent:"space-between"}}>
+        {media? (
+          <>
+            <Box sx={{display:"flex",justifyContent:"space-between"}}>
+              <div>
+                <Typography align='center'>
+                  <Typography variant='span' component="span">VOLQUETES</Typography>
+                  <Typography component="span"> MUSY</Typography>
+                </Typography>
+              </div>
+              <MenuIcon/>
+            </Box>
+
+          </>
+        ):(          
+          <Box sx={{display:"flex",justifyContent:"space-between"}}>
           <nav>
             <ul style={{listStyle:"none",display:"flex"}}>
               <li><Link style={navMenuLiStyle}>Home</Link></li>
@@ -46,10 +65,10 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
             </ul>
           </nav>
           <div style={{display:"flex",justifyContent:"space-between",fontSize:"2rem"}}>
-            <FaFacebookSquare ></FaFacebookSquare>
-            <FaInstagram></FaInstagram>
+            icons
           </div>
         </Box>
+        )}
       </Container>
     </Toolbar>
   </AppBar>
