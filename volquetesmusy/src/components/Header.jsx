@@ -1,11 +1,12 @@
 import { AppBar, Box, Container, Link, Menu, Switch, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
-
+import FacebookIcon from '@mui/icons-material/Facebook';
 import { FaFacebookSquare} from "react-icons/fa";
 import { FaInstagram } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { flipTheLights } from '../modeSlice';
+import { FacebookOutlined, Instagram } from '@mui/icons-material';
 const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContacto}) => {
 
 
@@ -47,7 +48,7 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
               <div>
                 <Typography align='center'>
                   <Typography variant='span' component="span">VOLQUETES</Typography>
-                  <Typography component="span"> MUSY</Typography>
+                  <Typography component="span" fontFamily={theme.typography.fontFamily[1]}> MUSY</Typography>
                 </Typography>
               </div>
               <MenuIcon/>
@@ -64,8 +65,9 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
               <li><Link style={navMenuLiStyle}>Contacto</Link></li>
             </ul>
           </nav>
-          <div style={{display:"flex",justifyContent:"space-between",fontSize:"2rem"}}>
-            icons
+          <div style={{display:"flex",justifyContent:"space-evenly"}}>
+            <FacebookIcon fontSize='large'/>
+            <Instagram fontSize='large' />
           </div>
         </Box>
         )}

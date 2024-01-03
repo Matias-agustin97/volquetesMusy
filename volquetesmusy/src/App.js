@@ -10,10 +10,18 @@ import Footer from "./components/Footer";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
 
-import Righteous from "./styles/fonts/Righteous-Regular.ttf"
+import Righteous from "./styles/fonts/Righteous/Righteous-Regular.ttf";
+
+import Archivo from "./styles/fonts/Archivo/Archivo-VariableFont.ttf";
+                  
+                   
+
+import Inter from "./styles/fonts/Inter/Inter-VariableFont.ttf";
+                       
+
+
 import { Provider, useSelector } from "react-redux";
 import store from "./store";
-
 
 
 
@@ -50,7 +58,10 @@ function App() {
 
 
   const theme=createTheme({
-    
+    typography:{
+      fontFamily:["Archivo,Inter,Righteous"]
+    }
+    ,
     palette:{
       mode:browserTheme,
       primary:{
@@ -67,12 +78,28 @@ function App() {
     components:{
       MuiCssBaseline:{
         styleOverrides:`
-        @fontface{
+        @font-face{
           font-family:"Righteous";
           font-style:normal;
           font-weight:400;
           src:url(${Righteous}) format("ttf");
-        }`
+        }
+        @font-face{
+          font-family:"Archivo";
+          font-style:normal;
+          font-weight:400;
+          src:url(${Archivo}) format("ttf");
+        }
+        @font-face{
+          font-family:"Inter";
+          font-style:normal;
+          font-weight:400;
+          src:url(${Inter}) format("ttf");
+        }
+        
+        
+        
+        `
       }
     }
   })
