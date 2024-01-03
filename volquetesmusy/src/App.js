@@ -11,6 +11,8 @@ import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
 
 import Righteous from "./styles/fonts/Righteous-Regular.ttf"
+import { Provider, useSelector } from "react-redux";
+import store from "./store";
 
 
 
@@ -22,6 +24,15 @@ import Righteous from "./styles/fonts/Righteous-Regular.ttf"
 
 
 function App() {
+
+
+  const browserTheme=useSelector((state)=>state.mode.value)
+
+
+  
+
+
+
 
   const homeRef= useRef(null)
   const nosotrosRef= useRef(null)
@@ -39,7 +50,9 @@ function App() {
 
 
   const theme=createTheme({
+    
     palette:{
+      mode:browserTheme,
       primary:{
         main:"#b62e35"
       },
@@ -77,10 +90,12 @@ console.log(theme);
 
 
   return (
-   <ThemeProvider theme={theme}>
-    <CssBaseline/>
+   
+      <ThemeProvider theme={theme}>
+        <CssBaseline/>
       <Header/>
    </ThemeProvider>
+  
   );
 }
 

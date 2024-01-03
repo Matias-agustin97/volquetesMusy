@@ -1,17 +1,19 @@
-import { AppBar, Box, Container, Link, Toolbar, useTheme } from '@mui/material';
+import { AppBar, Box, Container, Link, Switch, Toolbar, useTheme } from '@mui/material';
 import React from 'react'
 
 
 import { FaFacebookSquare} from "react-icons/fa";
 import { FaInstagram } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { flipTheLights } from '../modeSlice';
 const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContacto}) => {
 
 
 
   const theme = useTheme()
 
-
-
+  const dispatch=useDispatch()
+  const browserTheme= useSelector((state)=>state.mode.value)
 
   const navMenuLiStyle={
     color:"white",
@@ -28,6 +30,11 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
  <header className='header-container'>
   <AppBar>
     <Toolbar>
+      <Switch onClick={()=>{
+        dispatch(flipTheLights())
+        
+      }
+        }></Switch>
       <Container>
         <Box sx={{display:"flex",justifyContent:"space-between"}}>
           <nav>
