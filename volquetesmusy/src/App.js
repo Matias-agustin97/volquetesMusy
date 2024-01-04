@@ -59,7 +59,7 @@ function App() {
 
   const theme=createTheme({
     typography:{
-      fontFamily:["Archivo,Inter,Righteous"]
+      fontFamily:"Archivo,Inter,Righteous"
     }
     ,
     palette:{
@@ -121,6 +121,8 @@ console.log(theme);
       <ThemeProvider theme={theme}>
         <CssBaseline/>
       <Header/>
+      <SobreNosotros/>
+      <Servicios/>
    </ThemeProvider>
   
   );

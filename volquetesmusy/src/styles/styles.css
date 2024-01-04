@@ -1,4 +1,16 @@
-
+@font-face {
+    font-family: "Righteous";
+    src: url("./fonts/Righteous/Righteous-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter/Inter-VariableFont.ttf") format("truetype");
+}
+@font-face{
+    font-family: "Archivo";
+    src: url("./fonts/Archivo/Archivo-VariableFont.ttf") format("truetype");
+}
+/*MATERIAL UI GUIDE TO TYPOGRAPHY IS BULLSHIT, JUST IMPORT IT TO YOU CSS FILE.jesus fucking christ*/
 :root{
     --color-primario:"#b62e35";
     --color-secundario:"#323433";
@@ -13,4 +25,40 @@
 html{
     scroll-behavior: smooth;
     
+}
+
+.musy{
+    font-family: "Righteous";
+    
+}
+
+.hero-bg{
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/precioVolquetes2.jpeg");
+    width: 100vw;
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+
+}
+
+.hero-content{
+    position: relative;
+    height: 100%;
+}
+.hero-intro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+}
+.hero-banner{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(182, 46, 53,0.8);
+    height: 30vh;
+    width: 100vw;
+    display: block;
 }
