@@ -25,7 +25,8 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
     padding:"0.5rem 1rem",
     fontFamily:"Inter",
     textDecoration:"none",
-    cursor:"pointer"
+    cursor:"pointer",
+    fontWeight:"bold"
   }
 
 
@@ -126,15 +127,15 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
           <Box sx={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
           <nav style={{flex:"1"}}>
             <ul style={{listStyle:"none",display:"flex",fontFamily:"Inter",justifyContent:"space-around"}}>
-              <li><Link style={navMenuLiStyle}><Typography>Home</Typography></Link></li>
-              <li><Link style={navMenuLiStyle}><Typography> Sobre nosotros</Typography></Link></li>
-              <li><Link style={navMenuLiStyle}><Typography> Nuestros Volquetes</Typography></Link></li>
-              <li><Link style={navMenuLiStyle}><Typography> Contacto</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography fontWeight="bold">Home</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold"> Sobre nosotros</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold"> Nuestros Volquetes</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold"> Contacto</Typography></Link></li>
             </ul>
           </nav>
           <div style={{display:"flex",justifyContent:"space-evenly"}}>
-            <FacebookIcon fontSize='large'/>
-            <Instagram fontSize='large' />
+            <FacebookIcon fontSize='large' sx={{cursor:"pointer"}}/>
+            <Instagram fontSize='large' sx={{cursor:"pointer"}} />
           </div>
         </Box>
         )}
