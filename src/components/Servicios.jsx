@@ -1,4 +1,4 @@
-import { Box, Container, IconButton, List, ListItem, ListItemIcon, ListSubheader, Typography } from '@mui/material'
+import { Box, Container, IconButton, List, ListItem, ListItemIcon, ListSubheader, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import Logo from "../images/logo.jpeg"
 import { DangerousSharp, DeleteSweep, DirectionsWalkSharp, EngineeringSharp } from '@mui/icons-material'
@@ -6,10 +6,29 @@ import { DangerousSharp, DeleteSweep, DirectionsWalkSharp, EngineeringSharp } fr
 
 
 const Servicios = React.forwardRef((props,ref) => {
+
+
+
+
+
+
+
+  const media= useMediaQuery("(max-width:600px)")
+
+  console.log(media);
+
+  let containerStyle={
+    display:"flex",
+    flexDirection: media?"column":"row",
+    alignItems:"stretch"
+  }
+
+
+
   return (
-    <section ref={ref} >
+    <section ref={ref} style={{maxWidth:"100vw"}}>
       <Container sx={{pt:"2rem"}}>
-        <Box sx={{display:"flex",alignItems:"stretch"}}>
+        <Box sx={containerStyle}>
           <img src={Logo} alt="logo volquetes musy" />
           <List sx={{listStyleType:"circle"}} >
             <ListSubheader color='primary'><Typography align='center' fontWeight="bold" fontSize="large">Nuestros Servicios</Typography></ListSubheader>

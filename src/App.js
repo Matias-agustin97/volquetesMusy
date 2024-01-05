@@ -123,6 +123,8 @@ console.log(theme);
       <Header/>
       <SobreNosotros/>
       <Servicios/>
+      {/*La galeria se pospone hasta tener fotos como se debe */}
+      <Contacto/>
    </ThemeProvider>
   
   );
