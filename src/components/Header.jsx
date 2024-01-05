@@ -40,22 +40,22 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
         <List>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Home" align="center"/>
+              <ListItemText primary="Home" align="center" onClick={scrolltoHome}/>
             </ListItemButton>
           </ListItem>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Sobre nosotros" align="center"/>
+              <ListItemText primary="Sobre nosotros" align="center" onClick={scrolltoNosotros}/>
             </ListItemButton>
           </ListItem>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Galeria"align="center" />
+              <ListItemText primary="Galeria"align="center"/>
             </ListItemButton>
           </ListItem>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Contacto" align="center" />
+              <ListItemText primary="Contacto" align="center" onClick={scrolltoContacto} />
             </ListItemButton>
           </ListItem>        
         </List>

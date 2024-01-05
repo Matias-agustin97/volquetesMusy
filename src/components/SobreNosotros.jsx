@@ -8,7 +8,10 @@ const SobreNosotros =React.forwardRef((props,ref) => {
 
   const theme = useTheme()
 
-  const media = useMediaQuery("max-width:600px")
+  const media = useMediaQuery("(max-width:600px)")
+
+
+  console.log("dudeeee"+media);
   return (
     <section ref={ref}>
       <div className="hero-bg">
@@ -23,7 +26,7 @@ const SobreNosotros =React.forwardRef((props,ref) => {
           </div>
           <div className="hero-banner">
             <Container>
-            <Typography color={theme.palette.terciary.main} pt="2rem" fontFamily="Inter" fontSize={media? "1.7rem":"0.80rem"} align='center'>
+            <Typography color={theme.palette.terciary.main} pt="2rem" fontFamily="Inter" fontSize={!media?"1.7rem":"0.80rem"} align='center'>
             Somos Volquetes MUSY, una empresa con mas de 30 años de experiencia en el rubro dedicada al alquiler de volquetes 
             (Habilitada por el Gobierno de la Ciudad de Buenos Aires). Atendida por sus dueños, nuestro principal objetivo es la atención personalizada
              y satisfacción de nuestros clientes, por eso contamos con todo lo adecuado para brindar el mejor servicio en C.A.B.A (Capital Federal).
