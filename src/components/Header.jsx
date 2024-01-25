@@ -40,12 +40,12 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
         <List>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Home" align="center" onClick={scrolltoHome}/>
+              <ListItemText primary="Home" align="center" onClick={()=>scrolltoNosotros()}/>
             </ListItemButton>
           </ListItem>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Sobre nosotros" align="center" onClick={scrolltoNosotros}/>
+              <ListItemText primary="Sobre nosotros" align="center" onClick={()=>scrolltoNosotros()}/>
             </ListItemButton>
           </ListItem>
           <ListItem>
@@ -55,7 +55,7 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
           </ListItem>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Contacto" align="center" onClick={scrolltoContacto} />
+              <ListItemText primary="Contacto" align="center" onClick={()=>scrolltoContacto()} />
             </ListItemButton>
           </ListItem>        
         </List>
@@ -74,7 +74,6 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
           </ListItem>
           <ListItem>
             <ListItemButton>
-
             </ListItemButton>
           </ListItem>
         </List>
@@ -127,10 +126,10 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
           <Box sx={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
           <nav style={{flex:"1"}}>
             <ul style={{listStyle:"none",display:"flex",fontFamily:"Inter",justifyContent:"space-around"}}>
-              <li><Link style={navMenuLiStyle}><Typography fontWeight="bold">Home</Typography></Link></li>
-              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold"> Sobre nosotros</Typography></Link></li>
-              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold"> Nuestros Volquetes</Typography></Link></li>
-              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold"> Contacto</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography fontWeight="bold" onClick={()=>scrolltoNosotros()}>Home</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold" onClick={()=>scrolltoNosotros()}> Sobre nosotros</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold" onClick={()=>scrolltoServicios()}> Nuestros Volquetes</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold" onClick={()=>scrolltoContacto()}> Contacto</Typography></Link></li>
             </ul>
           </nav>
           <div style={{display:"flex",justifyContent:"space-evenly"}}>

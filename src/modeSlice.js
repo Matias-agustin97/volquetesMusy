@@ -11,10 +11,10 @@ export const modeSlice=createSlice({
         flipTheLights:(state)=>{
             if(state.value==="light"){
                 state.value="dark"
-                console.log("wtf is light");
+               
             }else{
                 state.value="light"
-                console.log("wtf is dark");
+              
             }
         }
     }

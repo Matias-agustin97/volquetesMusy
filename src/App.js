@@ -113,18 +113,19 @@ function App() {
 
 
 
-console.log(theme);
+
 
 
   return (
    
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-      <Header/>
-      <SobreNosotros/>
-      <Servicios/>
+      <Header scrolltoContacto={scrolltoContacto} scrolltoHome={scrolltoHome} scrolltoServicios={scrolltoServicios} scrolltoNosotros={scrolltoNosotros}/>
+      <SobreNosotros ref={nosotrosRef}/>
+      <Servicios ref={serviciosRef}/>
       {/*La galeria se pospone hasta tener fotos como se debe */}
-      <Contacto/>
+      <Contacto ref={contactoRef}/>
+      <Footer/>
    </ThemeProvider>
   
   );
