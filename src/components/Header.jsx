@@ -6,7 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { useDispatch, useSelector } from 'react-redux';
 import { flipTheLights } from '../modeSlice';
 import {Instagram } from '@mui/icons-material';
-const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContacto}) => {
+const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContacto,scrollToGaleria}) => {
 
   const [drawerToggle, setdrawerToggle] = useState(false)
 
@@ -50,7 +50,7 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
           </ListItem>
           <ListItem>
             <ListItemButton>
-              <ListItemText primary="Galeria"align="center"/>
+              <ListItemText primary="Galeria"align="center" onClick={()=>scrollToGaleria()}/>
             </ListItemButton>
           </ListItem>
           <ListItem>
@@ -64,12 +64,16 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
         <List align="center">
           <ListItem >
             <ListItemButton>
+              <a href={"https://www.facebook.com/profile.php?id=100085866026122"} target='_blank'>
               <FacebookIcon fontSize='large'  sx={{m:"0 auto"}}/>
+              </a> 
             </ListItemButton>
           </ListItem>
           <ListItem >
             <ListItemButton>
-              <Instagram fontSize='large' sx={{m:"0 auto"}}/>
+             <a href='https://www.instagram.com/volquetesmusy/' target='_blank'>
+             <Instagram fontSize='large' sx={{m:"0 auto"}}/>
+             </a>
             </ListItemButton>
           </ListItem>
           <ListItem>
@@ -128,13 +132,17 @@ const Header = ({scrolltoHome,scrolltoNosotros,scrolltoServicios,scrolltoContact
             <ul style={{listStyle:"none",display:"flex",fontFamily:"Inter",justifyContent:"space-around"}}>
               <li><Link style={navMenuLiStyle}><Typography fontWeight="bold" onClick={()=>scrolltoNosotros()}>Home</Typography></Link></li>
               <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold" onClick={()=>scrolltoNosotros()}> Sobre nosotros</Typography></Link></li>
-              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold" onClick={()=>scrolltoServicios()}> Nuestros Volquetes</Typography></Link></li>
+              <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold" onClick={()=>scrollToGaleria()}> Nuestros Volquetes</Typography></Link></li>
               <li><Link style={navMenuLiStyle}><Typography  fontWeight="bold" onClick={()=>scrolltoContacto()}> Contacto</Typography></Link></li>
             </ul>
           </nav>
           <div style={{display:"flex",justifyContent:"space-evenly"}}>
+            <a href="https://www.facebook.com/profile.php?id=100085866026122" target='_blank'>
             <FacebookIcon fontSize='large' sx={{cursor:"pointer"}}/>
-            <Instagram fontSize='large' sx={{cursor:"pointer"}} />
+            </a>
+           <a href='https://www.instagram.com/volquetesmusy/' target='_blank'>
+           <Instagram fontSize='large' sx={{cursor:"pointer"}} />
+           </a>
           </div>
         </Box>
         )}

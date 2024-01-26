@@ -1,13 +1,13 @@
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Header from "./components/Header";
 import Servicios from "./components/Servicios";
 import SobreNosotros from "./components/SobreNosotros";
 import Galeria from "./components/Galeria";
-import "./styles/styles.css"
+import  "./styles/styles.css"
 import Contacto from "./components/Contacto";
 import React, { useRef } from "react";
-import FloatingButons from "./components/FloatingButons";
 import Footer from "./components/Footer";
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+
 
 
 import Righteous from "./styles/fonts/Righteous/Righteous-Regular.ttf";
@@ -120,10 +120,11 @@ function App() {
    
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-      <Header scrolltoContacto={scrolltoContacto} scrolltoHome={scrolltoHome} scrolltoServicios={scrolltoServicios} scrolltoNosotros={scrolltoNosotros}/>
+      <Header scrolltoContacto={scrolltoContacto} scrolltoHome={scrolltoHome} scrolltoServicios={scrolltoServicios} scrolltoNosotros={scrolltoNosotros} scrollToGaleria={scrolltoGaleria}/>
       <SobreNosotros ref={nosotrosRef}/>
       <Servicios ref={serviciosRef}/>
       {/*La galeria se pospone hasta tener fotos como se debe */}
+      <Galeria ref={galeriaRef}/>
       <Contacto ref={contactoRef}/>
       <Footer/>
    </ThemeProvider>

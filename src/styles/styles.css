@@ -1,14 +1,17 @@
 @font-face {
     font-family: "Righteous";
     src: url("./fonts/Righteous/Righteous-Regular.ttf") format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "Inter";
     src: url("./fonts/Inter/Inter-VariableFont.ttf") format("truetype");
+    font-display: swap;
 }
 @font-face{
     font-family: "Archivo";
     src: url("./fonts/Archivo/Archivo-VariableFont.ttf") format("truetype");
+    font-display: swap;
 }
 /*MATERIAL UI GUIDE TO TYPOGRAPHY IS BULLSHIT, JUST IMPORT IT TO YOU CSS FILE.jesus fucking christ*/
 :root{
@@ -32,36 +35,53 @@ html{
     
 }
 
-.hero-bg{
+a:active,a:focus,a{
+    color: #fff;
+}
+.sobre-nos-cont{
+    position: relative;
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../images/precioVolquetes2.jpeg");
-   
-    height: 80vh;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    position: relative;
-   
-
 }
 
-.hero-content{
-    position: relative;
-    height: 100%;
-}
 .hero-intro{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-   
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:flex-end;
+
+    padding: 10vh 10vw;
+    
 }
-.hero-banner{
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(182, 46, 53,0.8);
-    min-height: 30vh;
-    width: 100vw;
-    display: block;
+
+.hero-intro h1{
+   font-size: 4rem;
+}
+.hero-intro button{
+    align-self: flex-start;
+}
+
+.hero-banner-text{
+    flex: 1;
+    background-color: rgba(182, 46, 53,0.96);
+}
+.h1-title{
+    font-family:"Righteous";
+    color:white;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+    text-align:left;
+    font-size:2.5rem;
+}
+.hero-banner-text{
+    color:white;
+    padding:2rem 10%;
+    font-family:"Inter";
+    font-size:1.7rem;
+    text-align:center;
 }
 
 
@@ -69,10 +89,11 @@ html{
 
 
 
-    .hero-bg{
-        
-        
-        min-height: 110vh;
-       background-position:top;
+
+    .hero-intro h1{
+        font-size: 2rem;
+    }
+    .hero-banner-text{
+        font-size: 1.1rem;
     }
 }
